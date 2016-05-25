@@ -1,0 +1,32 @@
+﻿[JavaScript:{ jsname: "JQuery" }]
+[JavaScript:{ jsname: "Knockout" }]
+[JavaScript:{ path: "~/Resources/Shared/scripts/dnn.jquery.js"}]
+[JavaScript:{ path: "~/DesktopModules/PowerBI/scripts/ReportView.js"}]
+
+<div id="Reports-[ModuleContext:ModuleId]" class="pbi container-fluid">
+    <div class="pbi-list col-md-3">
+        <div>
+            <h2>Reports</h2>
+            <ul data-bind="foreach: reportList">
+                <li class="tm_t">
+                    <a href="#" data-bind="text: name, click: $root.selectReport, css: { selected: $root.selectedReport == id }"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <iframe ID="iFrameEmbedReport" style="height:500px" src="" frameborder="1" class="pbi-view col-md-9" seamless></iframe>
+</div>
+
+<script language="javascript" type="text/javascript">
+    jQuery(function ($) {
+        var moduleId = parseInt("[ModuleContext:ModuleId]");
+
+        var localizedSettings = {};
+
+        var viewmodel = new PowerBI.reportListViewModel(moduleId, localizedSettings);
+        viewmodel.init();
+
+        ko.applyBindings(viewmodel, $("#Reports-" + moduleId)[0]);
+
+    });
+</script>

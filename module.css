@@ -1,0 +1,40 @@
+.pbi {
+    padding-top: 15px;
+}
+
+.pbi-list > div {
+    background-color: #eee;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.pbi-list h2 {
+    font-size: 1.2em;
+    color: white;
+    background-color: #212121;
+    padding: 0.3em 0.7em;
+    margin-bottom: 0;
+    border-bottom: 3px solid #e00;
+}
+
+.pbi-list ul {
+    margin: 0 0 1em;
+}
+
+.pbi-list li {
+    list-style: none;
+}
+
+    .pbi-list li a {
+        display: block;
+        padding: .2em .4em;
+    }
+
+        .pbi-list li a:hover, .pbi-list li a.selected {
+            background: #7ca0c0;
+            color: white;
+            text-decoration: none;
+        }
+
+.pbi-view, .pbi-list {
+}
