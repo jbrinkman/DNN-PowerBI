@@ -63,7 +63,7 @@ PowerBI.quickSettings = function(root, moduleId) {
     };
 
     var load = function (data) {
-        workspaceId(data.WorkspaceId)
+        workspaceId(data.WorkspaceId);
         workspaceName(data.WorkspaceName);
         accessKey(data.AccessKey);
     };
